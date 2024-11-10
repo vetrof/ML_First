@@ -3,7 +3,12 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.utils import to_categorical
+
 import numpy as np
+
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
 
 # 1. Подготовка данных
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
